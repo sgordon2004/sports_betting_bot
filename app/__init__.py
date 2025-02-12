@@ -14,4 +14,8 @@ celery = Celery (
     broker = app.config['CELERY_BROKER_URL'],
     backend = app.config['CELERY_RESULT_BACKEND']
 )
+# Update Celery configuration settings with Flask config
 celery.conf.update(app.config)
+
+from app import routes
+from app import tasks
